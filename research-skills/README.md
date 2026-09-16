@@ -13,7 +13,7 @@ The original `skills/` directory is intentionally left unchanged so it can remai
 - make figures and manuscript claims reproducible;
 - verify uncertainty, repeatability, references, and manuscript consistency before finalization.
 
-## Initial workflow
+## Core workflow
 
 ```text
 00-research-controller
@@ -27,7 +27,22 @@ The original `skills/` directory is intentionally left unchanged so it can remai
   -> 08-research-verification
 ```
 
-The first implementation phase provides the controller, problem-definition, data-audit, and shared engineering-research norms. Later phases should add computation, validation, manuscript, and final verification skills.
+All nine core workflow skills are now present on the research-adaptation branch.
+
+## Supporting content
+
+```text
+_references/
+  engineering_research_norms.md
+
+domain-profiles/
+  rh-calibration-reference.md
+  idc-capacitive-sensor.md
+
+skills.sh.json
+```
+
+The domain profiles extend the general workflow without replacing the core evidence and validation rules.
 
 ## Portability rule
 
@@ -38,3 +53,28 @@ Use whatever tools are actually available in the active environment, while prese
 ## Safety rule
 
 Do not overwrite raw data, original manuscripts, firmware, or experimental records unless the user explicitly asks for that mutation. Prefer derived files, new branches, versioned outputs, and minimal-diff edits.
+
+## Recommended pilot
+
+Before merging into `main`, test the workflow on one real experimental dataset.
+
+See:
+
+`docs/RESEARCH_SKILLS_TEST_PLAN.md`
+
+The pilot should verify that the workflow can:
+
+- preserve raw-data integrity;
+- detect metadata/numerical inconsistencies;
+- separate setpoints from measured conditions;
+- prevent unsupported equilibrium or repeatability claims;
+- reproduce quantitative results;
+- keep manuscript claims traceable to validated evidence.
+
+## Relationship to original MathModelAgent
+
+`skills/` remains the competition-oriented upstream layer.
+
+`research-skills/` is the engineering-research layer.
+
+Do not delete or rewrite the original skills until the research workflow has been tested on real data and the migration decision is reviewed.
