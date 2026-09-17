@@ -59,6 +59,31 @@ If file-writing is unavailable, present the same information in the response rat
 
 Not every task requires every stage. Skip a stage only with an explicit reason.
 
+## Generic plotting routing
+
+Natural-language plotting requests should not require the user to name a skill or preset.
+
+If the user asks to plot/graph/chart quantitative data, including phrases such as:
+
+- `plot X vs Y`;
+- `พลอต...`, `พล็อต...`, `พลอตกราฟ...`, `ทำกราฟ...`;
+- `compare these datasets visually`;
+- `show residuals`;
+- `add uncertainty/error bars`;
+- `use the latest data from Drive`;
+- `make this manuscript-ready`;
+
+route to:
+
+1. `06-scientific-visualization/SKILL.md`;
+2. `../_references/scientific-plotting-rules.md`;
+3. the current project's canonical/source-routing documents if available;
+4. any applicable domain profile.
+
+The user should normally only need to specify what to plot, which data/source to use, and optionally the desired output level. Infer the rest from current project context when it is safe to do so.
+
+Do not use remembered numerical values when the user requests current project data, current Drive data, or manuscript-facing output and a better authoritative source is available.
+
 ## Domain-profile routing
 
 Use domain profiles when the request matches them. Domain profiles extend the core workflow; they do not replace project canonical sources or raw/FROZEN evidence.
@@ -67,7 +92,7 @@ Use domain profiles when the request matches them. Domain profiles extend the co
 - IDC capacitive-sensor work -> `../domain-profiles/idc-capacitive-sensor.md`
 - glycerol composition/RH literature plotting, Forney/Zhang/Hook & Mayer comparisons, literature residual plots, or requests such as “plot composition vs RH” -> `../domain-profiles/gly-literature-plotting-profile.md`
 
-For plotting requests, also use `06-scientific-visualization` and re-ground the current project/FROZEN source before generating a manuscript-facing figure.
+For plotting requests, use the generic plotting rules first, then apply domain-specific constraints.
 
 ## research_plan.md structure
 
