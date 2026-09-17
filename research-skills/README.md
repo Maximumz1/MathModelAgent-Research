@@ -38,11 +38,14 @@ _references/
 domain-profiles/
   rh-calibration-reference.md
   idc-capacitive-sensor.md
+  gly-literature-plotting-profile.md
 
 skills.sh.json
 ```
 
 The domain profiles extend the general workflow without replacing the core evidence and validation rules.
+
+`gly-literature-plotting-profile.md` is the routing/profile file for glycerol composition–RH literature comparisons. It points the agent back to the current canonical project owners, the FROZEN analysis package, and the current Drive literature source-data package before plotting, so it does not become a duplicate numerical authority.
 
 ## Portability rule
 
