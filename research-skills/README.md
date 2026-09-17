@@ -27,13 +27,14 @@ The original `skills/` directory is intentionally left unchanged so it can remai
   -> 08-research-verification
 ```
 
-All nine core workflow skills are now present on the research-adaptation branch.
+All nine core workflow skills are present on the research-adaptation branch.
 
 ## Supporting content
 
 ```text
 _references/
   engineering_research_norms.md
+  scientific-plotting-rules.md
 
 domain-profiles/
   rh-calibration-reference.md
@@ -43,9 +44,30 @@ domain-profiles/
 skills.sh.json
 ```
 
-The domain profiles extend the general workflow without replacing the core evidence and validation rules.
+## Cross-project plotting
 
-`gly-literature-plotting-profile.md` is the routing/profile file for glycerol composition–RH literature comparisons. It points the agent back to the current canonical project owners, the FROZEN analysis package, and the current Drive literature source-data package before plotting, so it does not become a duplicate numerical authority.
+`scientific-plotting-rules.md` is the generic plotting contract used across projects.
+
+The user should normally be able to make short natural-language requests such as:
+
+- `plot X vs Y from this file`
+- `พลอตกราฟสองชุดนี้เทียบกัน`
+- `ใช้ข้อมูลล่าสุดใน Drive`
+- `ทำ residual ให้ด้วย`
+- `ใส่ uncertainty`
+- `ทำแบบใช้ใน manuscript`
+
+The controller routes these requests through `06-scientific-visualization`, resolves the current project/source hierarchy, and then loads a domain profile only when domain-specific rules are needed.
+
+Generic plotting rules define **how to plot and how to ground the data**. They do not store project numerical results.
+
+## Domain profiles
+
+Domain profiles extend the general workflow without replacing core evidence and validation rules.
+
+`gly-literature-plotting-profile.md` is the specialized routing/profile file for glycerol composition–RH literature comparisons. It points the agent back to current canonical project owners, FROZEN analysis, and the current Drive literature source-data package before plotting, so it does not become a duplicate numerical authority.
+
+Create additional domain profiles only when a project has reusable semantics or constraints that cannot be safely inferred from the generic plotting rules. Do not create one merely for every new graph.
 
 ## Portability rule
 
@@ -59,7 +81,7 @@ Do not overwrite raw data, original manuscripts, firmware, or experimental recor
 
 ## Recommended pilot
 
-Before merging into `main`, test the workflow on one real experimental dataset.
+Before merging into `main`, test the workflow on real datasets from more than one project/domain.
 
 See:
 
@@ -72,7 +94,8 @@ The pilot should verify that the workflow can:
 - separate setpoints from measured conditions;
 - prevent unsupported equilibrium or repeatability claims;
 - reproduce quantitative results;
-- keep manuscript claims traceable to validated evidence.
+- keep manuscript claims traceable to validated evidence;
+- route short natural-language plotting requests correctly across different projects.
 
 ## Relationship to original MathModelAgent
 
