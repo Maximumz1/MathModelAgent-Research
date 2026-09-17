@@ -59,6 +59,16 @@ If file-writing is unavailable, present the same information in the response rat
 
 Not every task requires every stage. Skip a stage only with an explicit reason.
 
+## Domain-profile routing
+
+Use domain profiles when the request matches them. Domain profiles extend the core workflow; they do not replace project canonical sources or raw/FROZEN evidence.
+
+- RH calibration/reference-system work -> `../domain-profiles/rh-calibration-reference.md`
+- IDC capacitive-sensor work -> `../domain-profiles/idc-capacitive-sensor.md`
+- glycerol composition/RH literature plotting, Forney/Zhang/Hook & Mayer comparisons, literature residual plots, or requests such as “plot composition vs RH” -> `../domain-profiles/gly-literature-plotting-profile.md`
+
+For plotting requests, also use `06-scientific-visualization` and re-ground the current project/FROZEN source before generating a manuscript-facing figure.
+
 ## research_plan.md structure
 
 ```markdown
