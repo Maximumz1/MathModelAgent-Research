@@ -104,3 +104,7 @@ The pilot should verify that the workflow can:
 `research-skills/` is the engineering-research layer.
 
 Do not delete or rewrite the original skills until the research workflow has been tested on real data and the migration decision is reviewed.
+
+## Optional investing domain skill
+
+- [asset-management-research](asset-management-research/SKILL.md) — read-only portfolio risk, ETF allocation, retrospective walk-forward, costs, concentration checks and traceable CSV/JSON/ZIP. Its source rules refer to the user's CURRENT Investment Project documents; it is not a trading system and does not install external Python dependencies automatically.
